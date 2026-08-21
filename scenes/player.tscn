@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bqd41shxi2v0c"]
+
+[ext_resource type="Texture2D" uid="uid://c3x77m0hr47di" path="res://assets/Tiles/tile_0109.png" id="1_qm0ti"]
+[ext_resource type="Script" uid="uid://dkt7wjsx7h6b7" path="res://scripts/player.gd" id="2_fhbv5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 6.0
+height = 16.0
+
+[node name="Player" type="Sprite2D" unique_id=668345834]
+texture_filter = 1
+texture = ExtResource("1_qm0ti")
+script = ExtResource("2_fhbv5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1846141255]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1052704929]
+shape = SubResource("CapsuleShape2D_g2els")

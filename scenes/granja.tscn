@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://1s85gvritqgk"]
+
+[ext_resource type="Script" uid="uid://5hs1pogfh1b2" path="res://scripts/granja.gd" id="1_6cgi1"]
+[ext_resource type="PackedScene" uid="uid://bqd41shxi2v0c" path="res://scenes/player.tscn" id="1_cpvf1"]
+
+[node name="Granja" type="Node2D" unique_id=495581603]
+script = ExtResource("1_6cgi1")
+
+[node name="Player" parent="." unique_id=668345834 instance=ExtResource("1_cpvf1")]
+position = Vector2(35, 86)
