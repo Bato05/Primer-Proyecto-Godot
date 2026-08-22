@@ -2,9 +2,21 @@
 
 [ext_resource type="Script" uid="uid://5hs1pogfh1b2" path="res://scripts/granja.gd" id="1_6cgi1"]
 [ext_resource type="PackedScene" uid="uid://bqd41shxi2v0c" path="res://scenes/player.tscn" id="1_cpvf1"]
+[ext_resource type="PackedScene" uid="uid://nkvrau7gyxsj" path="res://scenes/box.tscn" id="3_6cgi1"]
+[ext_resource type="PackedScene" uid="uid://ppjt23rqhnmi" path="res://scenes/player_2.tscn" id="4_qjnix"]
 
 [node name="Granja" type="Node2D" unique_id=495581603]
 script = ExtResource("1_6cgi1")
 
 [node name="Player" parent="." unique_id=668345834 instance=ExtResource("1_cpvf1")]
-position = Vector2(35, 86)
+position = Vector2(40, 97)
+number_player = 1
+
+[node name="Box" parent="." unique_id=632867818 instance=ExtResource("3_6cgi1")]
+position = Vector2(219, 56)
+
+[node name="Box2" parent="." unique_id=977521361 instance=ExtResource("3_6cgi1")]
+position = Vector2(119, 96)
+
+[node name="Player2" parent="." unique_id=294772229 instance=ExtResource("4_qjnix")]
+position = Vector2(278, 96)

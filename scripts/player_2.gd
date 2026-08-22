@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	# Esta funcion hace lo mismo que la estructura de los if
-	direction = Input.get_vector("MOVE_LEFT", "MOVE_RIGHT", "MOVE_UP", "MOVE_DOWN")
+	direction = Input.get_vector("p2_left", "p2_right", "p2_up", "p2_down")
 	# inicializamos en cero
 	#direction = Vector2.ZERO
 	

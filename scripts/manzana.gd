@@ -12,5 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	# elimina el nodo de la pantalla
-	queue_free()
+	# Si el area que choco es la del jugador...elimina la manzana
+	if area.is_in_group("Player"):
+		# elimina el nodo de la pantalla
+		queue_free()
