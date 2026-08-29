@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://1s85gvritqgk"]
+[gd_scene format=3 uid="uid://1s85gvritqgk"]
 
 [ext_resource type="Script" uid="uid://5hs1pogfh1b2" path="res://scripts/granja.gd" id="1_6cgi1"]
 [ext_resource type="PackedScene" uid="uid://bqd41shxi2v0c" path="res://scenes/player.tscn" id="1_cpvf1"]
@@ -6,30 +6,30 @@
 [ext_resource type="PackedScene" uid="uid://ppjt23rqhnmi" path="res://scenes/player_2.tscn" id="4_qjnix"]
 [ext_resource type="PackedScene" uid="uid://chjbx3rwcdnsx" path="res://scenes/manzana.tscn" id="5_secpm"]
 
-[node name="Granja" type="Node2D"]
+[node name="Granja" type="Node2D" unique_id=132433626]
 script = ExtResource("1_6cgi1")
 
-[node name="Player" parent="." instance=ExtResource("1_cpvf1")]
+[node name="Player" parent="." unique_id=1341423924 instance=ExtResource("1_cpvf1")]
 position = Vector2(40, 97)
 motion_mode = 1
 number_player = 1
 
-[node name="Box" parent="." instance=ExtResource("3_6cgi1")]
+[node name="Box" parent="." unique_id=1959314912 instance=ExtResource("3_6cgi1")]
 position = Vector2(219, 56)
 
-[node name="Box2" parent="." instance=ExtResource("3_6cgi1")]
+[node name="Box2" parent="." unique_id=708646621 instance=ExtResource("3_6cgi1")]
 position = Vector2(119, 96)
 
-[node name="LabelCuentaRegresiva" type="Label" parent="."]
+[node name="LabelCuentaRegresiva" type="Label" parent="." unique_id=2133085077]
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Tiempo: 10"
 
-[node name="TimerCuentaRegresiva" type="Timer" parent="."]
+[node name="TimerCuentaRegresiva" type="Timer" parent="." unique_id=1024687831]
 autostart = true
 
-[node name="LabelPuntos" type="Label" parent="."]
+[node name="LabelPuntos" type="Label" parent="." unique_id=117948402]
 texture_filter = 1
 offset_left = 248.0
 offset_top = 28.0
@@ -37,13 +37,13 @@ offset_right = 320.0
 offset_bottom = 51.0
 text = "Puntos: 0"
 
-[node name="Manzana" parent="." instance=ExtResource("5_secpm")]
+[node name="Manzana" parent="." unique_id=1538669270 instance=ExtResource("5_secpm")]
 
-[node name="Player2" parent="." instance=ExtResource("4_qjnix")]
+[node name="Player2" parent="." unique_id=366407747 instance=ExtResource("4_qjnix")]
 position = Vector2(270, 99)
 motion_mode = 1
 
-[node name="LabelMaximoPuntaje" type="Label" parent="."]
+[node name="LabelMaximoPuntaje" type="Label" parent="." unique_id=1410472928]
 texture_filter = 1
 offset_left = 228.0
 offset_top = 1.0
