@@ -14,5 +14,13 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	# Si el area que choco es la del jugador...elimina la manzana
 	if area.is_in_group("Player"):
+		
+		# 3 formas de subir a un nodo superior
+		# $"/root/Granja"
+		# $"../../../"
+		# get_parent().get_parent().get_parent()
+		
+		get_parent().sumar_punto()
+		
 		# elimina el nodo de la pantalla
 		queue_free()

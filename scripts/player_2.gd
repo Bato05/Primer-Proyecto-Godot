@@ -3,6 +3,7 @@ extends CharacterBody2D
 var direction 
 var speed = 60
 @export var number_player: int
+@onready var granja = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +12,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	# si el juego termino sale de la funcion actual y no ejecuta el resto de la funcion
+	if granja.juego_terminado == true: 
+		return
 	
 	# Esta funcion hace lo mismo que la estructura de los if
 	direction = Input.get_vector("p2_left", "p2_right", "p2_up", "p2_down")

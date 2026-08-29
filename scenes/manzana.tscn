@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://chjbx3rwcdnsx"]
+[gd_scene load_steps=4 format=3 uid="uid://chjbx3rwcdnsx"]
 
 [ext_resource type="Texture2D" uid="uid://rgnru5xtp2fr" path="res://assets/Tiles/tile_0044.png" id="1_3vfc0"]
 [ext_resource type="Script" uid="uid://ckdjwxiqdmsdu" path="res://scripts/manzana.gd" id="2_453pd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vfc0"]
-radius = 7.071068
+radius = 7.07107
 
-[node name="Manzana" type="Sprite2D" unique_id=460051246]
+[node name="Manzana" type="Sprite2D"]
 texture_filter = 1
 texture = ExtResource("1_3vfc0")
 script = ExtResource("2_453pd")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1451358112]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1308957286]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_3vfc0")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
