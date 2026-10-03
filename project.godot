@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="PrimerProyectoGodot"
-run/main_scene="uid://1s85gvritqgk"
+run/main_scene="uid://dbxemheudj2a2"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -27,7 +27,7 @@ Global="*uid://cbsbd54rxab37"
 
 window/size/viewport_width=320
 window/size/viewport_height=200
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [input]
 
@@ -78,6 +78,7 @@ p2_down={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

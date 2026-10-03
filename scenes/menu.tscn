@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dbxemheudj2a2"]
+
+[ext_resource type="Script" uid="uid://rd2x8nsnltkp" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="Menu" type="Control" unique_id=1210929039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1519741890]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer" unique_id=506047398]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer3" unique_id=727972047]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Titulo" type="RichTextLabel" parent="MarginContainer/VBoxContainer3/VBoxContainer" unique_id=659459994]
+custom_minimum_size = Vector2(120, 25)
+layout_mode = 2
+bbcode_enabled = true
+text = "[rainbow freq=0.1 sat=1.0
+val=0.8
+speed=5.0]Manzanero
+rainbow]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer3" unique_id=1714214116]
+layout_mode = 2
+
+[node name="ButtonNivel1" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=1827670849]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Nivel 1"
+
+[node name="ButtonNivel2" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=1003821005]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Nivel 2
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=2107735234]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer" unique_id=132293555]
+layout_mode = 2
+text = "Audio"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer" unique_id=23174842]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Salir" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=1954846958]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Salir
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/VBoxContainer2/ButtonNivel1" to="." method="_on_button_nivel_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/VBoxContainer2/ButtonNivel2" to="." method="_on_button_nivel_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/VBoxContainer2/Salir" to="." method="_on_salir_pressed"]

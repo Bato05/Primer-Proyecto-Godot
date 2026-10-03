@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://nkvrau7gyxsj" path="res://scenes/box.tscn" id="3_6cgi1"]
 [ext_resource type="PackedScene" uid="uid://ppjt23rqhnmi" path="res://scenes/player_2.tscn" id="4_qjnix"]
 [ext_resource type="PackedScene" uid="uid://chjbx3rwcdnsx" path="res://scenes/manzana.tscn" id="5_secpm"]
+[ext_resource type="Script" uid="uid://bt4jh4pfop5vj" path="res://scenes/player_auto.gd" id="6_uwebh"]
 
 [node name="Granja" type="Node2D" unique_id=132433626]
 script = ExtResource("1_6cgi1")
@@ -20,6 +21,11 @@ position = Vector2(219, 56)
 [node name="Box2" parent="." unique_id=708646621 instance=ExtResource("3_6cgi1")]
 position = Vector2(119, 96)
 
+[node name="Player2" parent="." unique_id=366407747 instance=ExtResource("4_qjnix")]
+position = Vector2(270, 99)
+motion_mode = 1
+script = ExtResource("6_uwebh")
+
 [node name="LabelCuentaRegresiva" type="Label" parent="." unique_id=2133085077]
 texture_filter = 1
 offset_right = 40.0
@@ -29,26 +35,60 @@ text = "Tiempo: 10"
 [node name="TimerCuentaRegresiva" type="Timer" parent="." unique_id=1024687831]
 autostart = true
 
-[node name="LabelPuntos" type="Label" parent="." unique_id=117948402]
-texture_filter = 1
-offset_left = 248.0
-offset_top = 28.0
-offset_right = 320.0
-offset_bottom = 51.0
-text = "Puntos: 0"
-
-[node name="Manzana" parent="." unique_id=1538669270 instance=ExtResource("5_secpm")]
-
-[node name="Player2" parent="." unique_id=366407747 instance=ExtResource("4_qjnix")]
-position = Vector2(270, 99)
-motion_mode = 1
-
 [node name="LabelMaximoPuntaje" type="Label" parent="." unique_id=1410472928]
 texture_filter = 1
-offset_left = 228.0
+offset_left = 223.0
 offset_top = 1.0
 offset_right = 320.0
 offset_bottom = 24.0
 text = "Max Punt: 0"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1656456608]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1837754643]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=487104444]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer" unique_id=1204659726]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/MarginContainer/HBoxContainer" unique_id=726263528]
+layout_mode = 2
+
+[node name="LabelPuntos" type="Label" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/MarginContainer" unique_id=243540132]
+texture_filter = 1
+layout_mode = 2
+text = "Puntos: 0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/MarginContainer/HBoxContainer" unique_id=1405409850]
+layout_mode = 2
+
+[node name="LabelPuntos2" type="Label" parent="CanvasLayer/Control/MarginContainer/HBoxContainer/MarginContainer2" unique_id=1584470102]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Vidas"
+
+[node name="Manzana" parent="." unique_id=1538669270 instance=ExtResource("5_secpm")]
+position = Vector2(156, 140)
 
 [connection signal="timeout" from="TimerCuentaRegresiva" to="." method="_on_timer_cuenta_regresiva_timeout"]

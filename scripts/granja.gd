@@ -12,7 +12,7 @@ func _ready() -> void:
 	# la crea en la memoria pero no la crea en pantalla
 	var nueva_manzana  
 	
-	for n in range(0, 10):
+	for n in range(1, 11):
 		nueva_manzana = scene_manzana.instantiate()
 		# ahora si
 		add_child(nueva_manzana)
@@ -23,7 +23,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 
 func _on_timer_cuenta_regresiva_timeout() -> void:
@@ -39,7 +40,7 @@ func _on_timer_cuenta_regresiva_timeout() -> void:
 func sumar_punto() -> void:
 	
 	Global.puntos += 1
-	$LabelPuntos.text = "Puntos " + str(Global.puntos)
+	$CanvasLayer/Control/MarginContainer/HBoxContainer/MarginContainer/LabelPuntos.text = "Puntos " + str(Global.puntos)
 	if Global.puntos > Global.puntaje_maximo:
 			Global.puntaje_maximo = Global.puntos
 			$LabelMaximoPuntaje.text = "Max: " + str(Global.puntaje_maximo)
